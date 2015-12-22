@@ -13,6 +13,8 @@ namespace UnitTestApp1
             FareyNumbers nums = new FareyNumbers(1);
             Assert.IsTrue(nums.Count == 2);
         }
+
+        [TestMethod]
         public void TestMethod2()
         {
             FareyNumbers nums = new FareyNumbers(2);

@@ -29,14 +29,30 @@ namespace ConsoleApp1
         public readonly uint Num;
         public readonly uint Count;
 
-        HashSet<FareyNumber> Numbers = new HashSet<FareyNumber>();
+        public readonly HashSet<FareyNumber> Numbers = new HashSet<FareyNumber>();
 
         public FareyNumbers(uint N)
         {
             Num = N;
             Count = 0;
+            GenerateNumbers();
+            Count = (uint)Numbers.Count;
         }
 
+        private void GenerateNumbers()
+        {
+            if (Num == 1)
+            {
+                Numbers.Add(new FareyNumber(0, 1));
+                Numbers.Add(new FareyNumber(1, 1));
+            }
+            if (Num == 2)
+            {
+                Numbers.Add(new FareyNumber(0, 1));
+                Numbers.Add(new FareyNumber(1, 2));
+                Numbers.Add(new FareyNumber(1, 1));
+            }
+        }
     }
 
     class Program
